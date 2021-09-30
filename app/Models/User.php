@@ -22,6 +22,6 @@ class User extends Model
 
     public function handset()
     {
-        return $this->hasOne(Handset::class, 'handset_id');
+        return $this->hasOne(Handset::class, 'id');
     }
 }
