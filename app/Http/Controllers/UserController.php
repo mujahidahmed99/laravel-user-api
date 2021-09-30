@@ -21,11 +21,11 @@ class UserController extends Controller
         // ->get();
         // return $result;
 
-        // foreach (User::all() as $user)
-        // {
-        //     return $user::with('handset')->get();
-        // }
-        return User::with('handset')->get();
+        foreach (User::all() as $user)
+        {
+            return $user::with('handset')->get();
+        }
+        // return User::with('handset')->get();
     }
 
     /**
