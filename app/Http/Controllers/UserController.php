@@ -15,11 +15,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $result = DB::table('users')
-        ->leftjoin('handsets', 'users.handset_id', '=', 'handsets.id')
-        ->select('users.id as id','users.name as name', 'users.phone_number as phone_number', 'handsets.type as handset_type')
-        ->get();
-        return $result;
+        // $result = DB::table('users')
+        // ->leftjoin('handsets', 'users.handset_id', '=', 'handsets.id')
+        // ->select('users.id as id','users.name as name', 'users.phone_number as phone_number', 'handsets.type as handset_type')
+        // ->get();
+        // return $result;
+
+        // foreach (User::all() as $user)
+        // {
+        //     return $user::with('handset')->get();
+        // }
+        return User::with('handset')->get();
     }
 
     /**

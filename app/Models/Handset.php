@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Handset extends Model
 {
     use HasFactory;
+    public function user()
+    {
+        return $this->belongsTo(Handset::class);
+    }
 }

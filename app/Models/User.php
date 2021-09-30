@@ -19,4 +19,9 @@ class User extends Model
         'phone_number',
         'handset_id',
     ];
+
+    public function handset()
+    {
+        return $this->hasOne(Handset::class, 'id');
+    }
 }
