@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number');
             $table->integer('handset_id')->unsigned();
             $table->foreign('handset_id')->references('id')->on('handsets');
+            $table->timestamps();
         });
     }
 
