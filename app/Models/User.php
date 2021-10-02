@@ -22,6 +22,6 @@ class User extends Model
 
     public function handset()
     {
-        return $this->belongsTo(handset::class, 'handset_id');
+        return $this->belongsTo(handset::class);
     }
 }

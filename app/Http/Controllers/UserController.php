@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\support\Facades\DB;
+use Response;
 
 class UserController extends Controller
 {
@@ -38,6 +39,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+        if($user == null)
+        {
+            $returnData = array(
+                'status' => 'error',
+                'message' => 'User does not exist!'
+            );
+            return Response::json($returnData, 500);
+        }
         $user->update($request->all());
         return $user;
     }
