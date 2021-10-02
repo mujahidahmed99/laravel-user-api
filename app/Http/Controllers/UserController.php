@@ -16,6 +16,7 @@ class UserController extends Controller
      */
     public function read()
     {
+        // shows all users
         return User::with('handset')->get();
     }
 
@@ -32,7 +33,6 @@ class UserController extends Controller
             'phone_number' => 'required',
             'handset_id' => 'required|exists:handsets,id',
         ]);
-
         return User::Create($request->all());
     }
 
