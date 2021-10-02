@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function read()
     {
-        // shows all users
+        // show all users
         return User::with('handset')->get();
     }
 
